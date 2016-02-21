@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 
 gem 'sidekiq'
+gem 'sinatra', :require => nil, github: 'sinatra/sinatra', branch: 'mustermann'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
