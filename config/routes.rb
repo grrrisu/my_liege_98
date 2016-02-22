@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root to: 'test#fire_event'
 
+  resource :rooms, only: [:show]
+
   # Serve websocket cable requests in-process
-  # mount ActionCable.server => '/cable'
+  mount ActionCable.server => '/cable'
 end
