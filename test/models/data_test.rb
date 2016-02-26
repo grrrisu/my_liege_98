@@ -33,16 +33,14 @@ class SimDataTest < ActiveSupport::TestCase
   end
 
   test "should save values" do
-    #byebug
     @object.save!
-    #@object.reload
+    @object.reload
     assert_equal(@object.data_string, 'foo')
     assert_equal(@object.data_float, 1.23)
     assert_equal(@object.data_array, [4,5,6,7])
     # beware!! returns keys as strings
     assert_equal(@object.data_hash, {'a' => 1, 'b' => 2, 'c' => 3})
   end
-
 
   test "should create chidren" do
     child_1 = @object.children.build type: 'Sim::TestData', data_string: 'Child 1'

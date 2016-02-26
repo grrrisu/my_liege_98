@@ -6,7 +6,7 @@
 
 ```
 > brew install redis
-> brew install mongodb
+> brew install postgresql
 > bin/setup
 ```
 

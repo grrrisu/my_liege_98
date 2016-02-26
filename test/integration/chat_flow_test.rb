@@ -9,12 +9,14 @@ class ChatFlowTest < ActionDispatch::IntegrationTest
   test "should get show" do
     visit rooms_path
     #assert_response :success
-    assert_includes(response.body, 'eins')
-    assert_includes(response.body, 'zwei')
-    assert_not_includes(response.body, 'drei')
+    page.assert_text('eins')
+    page.assert_text('zwei')
+    page.assert_no_text('drei')
 
-    fill_in 'name', with: 'drei'
-    assert_includes(response.body, 'drei')
+    Sidekiq::Testing.inline! do
+      fill_in 'message', with: "drei\n"
+      page.assert_text('drei')
+    end
   end
 
 end
