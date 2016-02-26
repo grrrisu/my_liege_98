@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: cable_test_development
+  database: the_lord_development
 
 test:
   <<: *default
-  database: cable_test_test
+  database: the_lord_test
 
 production:
   <<: *default
-  database: cable_test_production
+  database: the_lord_production

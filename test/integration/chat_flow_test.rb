@@ -8,7 +8,6 @@ class ChatFlowTest < ActionDispatch::IntegrationTest
 
   test "should get show" do
     visit rooms_path
-    #assert_response :success
     page.assert_text('eins')
     page.assert_text('zwei')
     page.assert_no_text('drei')
