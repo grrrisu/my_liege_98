@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class Sim::TestData < Sim::Data
+class Sim::TestData < Sim::Object
 
   properties :data_string, :data_float, :data_array, :data_hash
 
 end
 
 
-class SimDataTest < ActiveSupport::TestCase
+class Sim::ObjectTest < ActiveSupport::TestCase
 
   def setup
     @object = Sim::TestData.new(data_string: 'foo', data_float: 1.23, data_array: [4,5,6,7], data_hash: {a: 1, b: 2, c: 3})

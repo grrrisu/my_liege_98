@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+idle:
+  type: 'Sim::Area'
+  status: 0
+
+pending:
+  type: 'Sim::Area'
+  status: 1
+
+queued:
+  type: 'Sim::Area'
+  status: 2
+
+processing:
+  type: 'Sim::Area'
+  status: 3

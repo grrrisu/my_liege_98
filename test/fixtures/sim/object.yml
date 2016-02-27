@@ -1,0 +1,8 @@
+different_types:
+  properties: {
+    data_string: 'foobar',
+    data_int: 456,
+    data_float: 1.23,
+    data_array: ['a', 'b', 'c'],
+    data_hash: {a: 1, b: 2, c: 3}
+  }

@@ -22,10 +22,13 @@ ActiveRecord::Schema.define(version: 20160224161506) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sim_data", force: :cascade do |t|
-    t.string  "type"
-    t.integer "parent_id"
-    t.json    "properties"
+  create_table "sim_objects", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "parent_id"
+    t.json     "properties"
+    t.integer  "status",     default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
