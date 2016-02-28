@@ -4,8 +4,6 @@ module Sim
     has_many   :children, class_name: 'Sim::Object', foreign_key: 'parent_id', dependent: :destroy
     belongs_to :parent, class_name: 'Sim::Object', foreign_key: 'parent_id', optional: true
 
-    enum status: { idle: 0, pending: 1, scheduled: 2, performing: 3 }
-
     def self.properties *keys
       keys.each do |key|
         self.define_reader(key)
