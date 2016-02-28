@@ -37,6 +37,9 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 3.0'
   gem 'spring'
+  gem 'guard', require: false
+  gem 'guard-minitest', require: false
+  gem 'growl', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
