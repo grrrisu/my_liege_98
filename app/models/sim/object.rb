@@ -24,5 +24,9 @@ module Sim
       end
     end
 
+    def sim
+      true
+    end
+
   end
 end

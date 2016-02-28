@@ -20,7 +20,7 @@ class SimLoopJob
   def sim_next_objects
     Sim::Area.pending.order(updated_at: :asc).limit(BATCH_SIZE).each_with_index do |area, index|
       area.update_attribute(:status, Sim::Area.statuses[:queued])
-      #SimWorker.perfom_in(((index + 1) * steps, area)
+      SimWorkerJob.perform_in(index * step, area.id)
     end
   end
 

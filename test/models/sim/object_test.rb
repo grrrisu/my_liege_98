@@ -51,5 +51,4 @@ class Sim::ObjectTest < ActiveSupport::TestCase
     assert_equal(child_1.reload.parent, @object)
   end
 
-
 end
