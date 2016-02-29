@@ -1,0 +1,7 @@
+%h1 Realm
+%h2= @realm.name
+
+- unless realm_running?
+  %button Start
+- else
+  %button Stop

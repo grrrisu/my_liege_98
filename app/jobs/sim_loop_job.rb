@@ -13,8 +13,9 @@ class SimLoopJob
   end
 
   def reschedule
-    # TODO check if level is still running
-    SimLoopJob.perform_in(step * BATCH_SIZE)
+    if SimLoopService.new.running?
+      SimLoopJob.perform_in(step * BATCH_SIZE)
+    end
   end
 
   def sim_next_objects

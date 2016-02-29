@@ -4,7 +4,7 @@ class WorldLockService
   KEY = 'world_lock'
 
   def initialize
-    @client = Redis.new
+    @client = RedisService.connection
   end
 
   def lock value
