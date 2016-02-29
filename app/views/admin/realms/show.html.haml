@@ -2,8 +2,14 @@
 %h2= @realm.name
 
 - unless realm_running?
-  %button Start
+  = link_to 'Start', start_admin_realms_path, method: :patch, remote: true
+  //%button Start
 - else
-  %button Stop
+  = link_to 'Stop', stop_admin_realms_path, method: :patch, remote: true
+  //%button Stop
+
+- unless sidekiq_running?
+  %p
+    %strong WARN: Sidekiq is not running!
 
 = render 'queues'

@@ -19,7 +19,11 @@ class SimLoopService
   end
 
   def sidekiq_running?
-    File.exist?(Rails.root.join('tmp', 'pids', 'sidekiq.pid'))
+    pid_path = Rails.root.join('tmp', 'pids', 'sidekiq.pid')
+    pid = File.read(pid_path).to_i
+    Process.getpgid(pid)
+  rescue Errno::ESRCH, Errno::ENOENT
+    false
   end
 
   def start_sidekiq

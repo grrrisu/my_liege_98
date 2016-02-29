@@ -5,7 +5,7 @@
     %th Queued
     %th Performing
   %tr
-    %td= Sim::Area.idle.count
-    %td= Sim::Area.pending.count
-    %td= Sim::Area.queued.count
-    %td= Sim::Area.performing.count
+    %td.ci-idle= Sim::Area.idle.count
+    %td.ci-pending= Sim::Area.pending.count
+    %td.ci-queued= Sim::Area.queued.count
+    %td.ci-performing= Sim::Area.performing.count
