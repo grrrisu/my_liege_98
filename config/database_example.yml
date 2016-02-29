@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: the_lord_development
+  database: my_liege_development
 
 test:
   <<: *default
-  database: the_lord_test
+  database: my_liege_test
 
 production:
   <<: *default
-  database: the_lord_production
+  database: my_liege_production
