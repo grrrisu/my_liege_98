@@ -1,0 +1,11 @@
+%table
+  %tr
+    %th Idle
+    %th Pending
+    %th Queued
+    %th Performing
+  %tr
+    %td= Sim::Area.idle.count
+    %td= Sim::Area.pending.count
+    %td= Sim::Area.queued.count
+    %td= Sim::Area.performing.count

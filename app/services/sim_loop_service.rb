@@ -21,11 +21,11 @@ class SimLoopService
   private
 
   def resume_queued_sim_objects
-    info "resume #{Sim::Area.queued.count} queued areas"
+    Rails.logger.info "resume #{Sim::Area.queued.count} queued areas"
     Sim::Area.queued.each do |area|
       SimWorkerJob.perform_async(area.id)
     end
-    info "resume #{Sim::Area.performing.count} performing areas"
+    Rails.logger.info "resume #{Sim::Area.performing.count} performing areas"
     Sim::Area.performing.each do |area|
       SimWorkerJob.perform_async(area.id)
     end
