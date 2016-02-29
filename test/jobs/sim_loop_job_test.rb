@@ -27,4 +27,9 @@ class SimLoopJobTest < ActiveJob::TestCase
     end
   end
 
+  test 'step with no sim areas' do
+    Sim::Area.delete_all
+    assert_equal SimLoopJob::LOOP_DURATION, @job.step
+  end
+
 end

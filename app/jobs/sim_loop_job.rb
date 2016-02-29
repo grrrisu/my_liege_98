@@ -26,7 +26,8 @@ class SimLoopJob
   end
 
   def step
-    LOOP_DURATION / Sim::Area.all.count
+  	areas = Sim::Area.all.count
+  	areas > 0 ? LOOP_DURATION / areas : LOOP_DURATION
   end
 
 end
