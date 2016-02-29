@@ -18,6 +18,19 @@ class SimLoopService
     @redis.del('realm_running')
   end
 
+  def sidekiq_running?
+    File.exist?(Rails.root.join('tmp', 'pids', 'sidekiq.pid'))
+  end
+
+  def start_sidekiq
+    unless sidekiq_running?
+      Dir.chdir(Rails.root) do
+        pid = Process.spawn 'sidekiq', '-C', 'config/sidekiq.yml'
+        Process.detach pid
+      end
+    end
+  end
+
   private
 
   def resume_queued_sim_objects

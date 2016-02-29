@@ -13,6 +13,6 @@
 #### Run
 
 ```
-> bundle exec sidekiq
+> bundle exec sidekiq -C config/sidekiq.yml
 > bundle exec rails server
 ```
