@@ -1,6 +1,8 @@
 module Sim
   class Area < Sim::Object
 
+    has_many :fields, class_name: 'Sim::Field', foreign_key: 'parent_id', dependent: :destroy
+
     # idle: all done, waiting for next loop
     # pending: should be simulated again and be queued soon
     # queued: ready for SimWorker to be picked up
@@ -16,10 +18,13 @@ module Sim
     # there will be only one job calling this sim method
     # all subdquent objects are simulated within this method
     def sim
-      # request food, things
-      # produce food, things
-      # transport things
-      # consume and break things
+      for_each_timeunit do
+        sim_children
+      end
+    end
+
+    def for_each_timeunit
+      yield
     end
 
   end

@@ -12,7 +12,7 @@ class SimWorkerJob
     @object.update_attribute :status, Sim::Area.statuses[:performing]
     Sim::Object.transaction do
       @object.sim
-      @object.update_attribute :status, Sim::Area.statuses[:idle]
+      @object.update_attributes status: Sim::Area.statuses[:idle] # TODO set last touched
     end
   end
 

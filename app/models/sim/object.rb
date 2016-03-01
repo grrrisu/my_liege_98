@@ -28,5 +28,35 @@ module Sim
       true
     end
 
+    def sim_children
+      children.each do |child|
+        child.sim_children
+        child.sim
+      end
+    end
+
+    def sim_workflow
+      request
+      produce
+      transport
+      consume
+    end
+
+    def request
+      true
+    end
+
+    def produce
+      true
+    end
+
+    def transport
+      true
+    end
+
+    def consume
+      true
+    end
+
   end
 end
