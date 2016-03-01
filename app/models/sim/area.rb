@@ -13,5 +13,14 @@ module Sim
       idle.update_all(status: statuses[:pending])
     end
 
+    # there will be only one job calling this sim method
+    # all subdquent objects are simulated within this method
+    def sim
+      # request food, things
+      # produce food, things
+      # transport things
+      # consume and break things
+    end
+
   end
 end
