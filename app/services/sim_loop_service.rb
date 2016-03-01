@@ -16,6 +16,8 @@ class SimLoopService
 
   def stop
     @redis.del('realm_running')
+    # TODO
+    # release all world locks
   end
 
   def sidekiq_running?
