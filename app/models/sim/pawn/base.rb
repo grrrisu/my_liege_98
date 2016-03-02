@@ -1,5 +1,6 @@
 module Sim
-  class Pawn < Sim::Object
+  module Pawn
+    class Base < Sim::Object
 
     STARVATION  = 100 # pawn dies if hunger reaches this limit
     FOOD_NEEDED = 10  # food need per round
@@ -10,5 +11,6 @@ module Sim
     # dexterity: (the better the less it breaks tools, produces better quality products)
     properties :hunger # :health ?, # constitution
 
+    end
   end
 end
