@@ -13,6 +13,11 @@ module Sim
         consume delay
       end
 
+      def eat delay
+        food_needed = Base::FOOD_NEEDED * delay
+      end
+
+
       def produce delay
         production = delay * PRODUCTION_RATE
         broken_tools = BREAK_RATE * production

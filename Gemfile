@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', '>= 5.0.0.beta2', '< 5.1'
+gem 'rails', '~> 5.1.0'
 
 gem 'puma'
 
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 
-gem 'pg'
+gem 'pg', '~> 0.21'
 
 gem 'jquery-rails'
 gem 'haml-rails'
@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 
 gem 'sidekiq'
-gem 'sinatra', :require => nil, github: 'sinatra/sinatra', branch: 'mustermann'
+gem 'sinatra'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
